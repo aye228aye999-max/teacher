@@ -1,0 +1,56 @@
+{
+  "id": "lesson-01",
+  "title": "Вежливо заказать в кафе: I'd like…",
+  "level": "A2",
+  "target": "I'd like + thing (I'd like a tea) and I'd like to + action (I'd like to pay)",
+  "ttsStyle": "Read aloud as a warm, friendly English teacher talking to one adult student. Natural, unhurried pace. Russian words are spoken naturally in Russian.",
+  "steps": [
+    {
+      "id": "warmup",
+      "type": "live",
+      "maxSeconds": 90,
+      "goal": "Say hi, introduce yourself as Anna, and ask one easy, friendly question about the student's day. React to the answer with genuine interest (one short follow-up at most). Then say that today you will practise ordering in a café, and call complete_step with outcome \"ok\"."
+    },
+    {
+      "id": "pretest",
+      "type": "live",
+      "maxSeconds": 90,
+      "goal": "Start a mini role-play: you are a waiter in a café and the student is a customer. Ask what they would like. Do NOT teach, hint or correct in this step: just listen to how they order, one or two tries. Then call complete_step with outcome \"target_used\" if they naturally used \"I'd like\" or \"I would like\" correctly, otherwise \"target_not_used\"."
+    },
+    {
+      "id": "explain_1",
+      "type": "recorded",
+      "skipIf": { "step": "pretest", "outcome": "target_used" },
+      "text": "Quick tip! When you order, \"I want a coffee\" sounds a bit too direct. Как будто «хочу кофе» — немного резко. Polite English uses \"I'd like\". I'd — это сокращение от I would, то есть «я бы хотел» или «я бы хотела». Listen: I'd like a coffee. I'd like a cheese sandwich. Your turn!"
+    },
+    {
+      "id": "practice_1",
+      "type": "live",
+      "maxSeconds": 150,
+      "goal": "Quick practice of \"I'd like + thing\". Give three ordering prompts, one at a time: a tea, a glass of water, a piece of chocolate cake. First prompt: \"Order a tea, please.\" Later prompts: just name the item. The student answers with \"I'd like ...\". Follow the correction rules. After three good answers (or about six exchanges), call complete_step with outcome \"ok\" or \"struggling\"."
+    },
+    {
+      "id": "explain_2",
+      "type": "recorded",
+      "text": "Nice! Now, for actions we add \"to\": I'd like to pay. I'd like to order. I'd like to sit by the window. То есть: I'd like, потом to, потом действие. Not \"I'd like pay\", but \"I'd like to pay\". Your turn!"
+    },
+    {
+      "id": "practice_2",
+      "type": "live",
+      "maxSeconds": 150,
+      "goal": "Quick practice of \"I'd like to + action\". Describe three situations, one at a time: the student wants to pay; they want to see the menu; they want to sit outside. The student answers with \"I'd like to ...\". Follow the correction rules; the typical mistake is a missing \"to\". After three good answers (or about six exchanges), call complete_step with outcome \"ok\" or \"struggling\"."
+    },
+    {
+      "id": "roleplay",
+      "type": "live",
+      "maxSeconds": 240,
+      "goal": "Full role-play. You are a friendly waiter in a small café in London; the student is a customer. Greet them, take the order and ask natural follow-up questions (for example: \"Anything else?\", \"For here or to go?\", \"Milk with that?\"). Add one small surprise: you have run out of what they ordered first, so they have to choose again. Stay in role and keep your turns short. The goal is that the student uses \"I'd like\" or \"I'd like to\" at least three times. Correct only target mistakes; log other mistakes with log_error and do not mention them now. End naturally: the student asks for the bill (\"I'd like to pay\"), you say goodbye as the waiter, then call complete_step with outcome \"ok\"."
+    },
+    {
+      "id": "wrapup",
+      "type": "live",
+      "maxSeconds": 90,
+      "goal": "Step out of the role and speak as Anna again. In three or four short sentences: one specific thing the student did well today; at most two things to remember, taken from the mistakes you logged (say the correct form simply); and a warm goodbye. You may use one short Russian sentence if it helps. Then call complete_step with outcome \"done\"."
+    }
+  ]
+}

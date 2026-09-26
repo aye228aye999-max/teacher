@@ -1,0 +1,22 @@
+{
+  "name": "teacher-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Тестовый голосовой урок английского на Gemini Live",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "audio": "node scripts/generate-audio.mjs",
+    "smoke": "node scripts/smoke-test.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^2.24.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
+  }
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Тестовый урок</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1 id="title">Тестовый урок</h1>
+        <p class="hint">
+          Лучше в наушниках и в Chrome. Анна ждёт, пока ты договоришь, так что паузы, чтобы подумать, — нормально.
+          Её можно перебивать.
+        </p>
+      </header>
+
+      <section class="panel">
+        <details id="settings">
+          <summary>Настройки</summary>
+          <div class="fields">
+            <label>
+              Модель
+              <select id="model">
+                <option value="live">Gemini 3.8 Live</option>
+                <option value="thinking">Gemini 3.8 Live Extended Thinking</option>
+              </select>
+            </label>
+            <label>
+              Голос
+              <select id="voice"></select>
+            </label>
+            <label>
+              Ждать тишины, мс
+              <input id="silence" type="number" min="300" max="4000" step="100" />
+            </label>
+            <label>
+              Как передавать контекст
+              <select id="ctx">
+                <option value="clientContent">С ролями (основной)</option>
+                <option value="text">Одной строкой (запасной)</option>
+              </select>
+            </label>
+          </div>
+          <p class="hint small">Записанные реплики нужно озвучить тем же голосом: <code>npm run audio -- --voice Имя</code>.</p>
+        </details>
+
+        <div class="buttons">
+          <button id="start" class="primary">Начать урок</button>
+          <button id="stop" disabled>Закончить</button>
+          <button id="download" disabled>Скачать журнал</button>
+        </div>
+        <div class="status"><span id="dot" class="dot"></span><span id="status">Готово к старту</span></div>
+        <div id="notice" class="notice" hidden></div>
+      </section>
+
+      <section class="layout">
+        <ol id="steps" class="steps"></ol>
+        <div id="transcript" class="transcript" aria-live="polite"></div>
+      </section>
+
+      <section class="metrics">
+        <div><span class="label">Стоимость урока</span><span id="cost">$0.0000</span></div>
+        <div><span class="label">Пауза до ответа, медиана</span><span id="latency">—</span></div>
+        <div><span class="label">Токены (аудио/текст)</span><span id="tokens">—</span></div>
+      </section>
+
+      <section id="errors-box" class="errors" hidden>
+        <h2>Ошибки, отложенные на разбор</h2>
+        <ul id="errors"></ul>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
